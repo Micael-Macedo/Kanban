@@ -1,34 +1,46 @@
-const columns = document.querySelectorAll(".column");
-document.addEventListener('dragstart', (e) =>{
-    e.target.classList.add("dragging");
+const cards = document.querySelectorAll(".card")
+const dropzones = document.querySelectorAll(".dropzone")
+function log(message){
+    console.log(message)
+}
+
+cards.forEach(card => {
+    card.addEventListener('dragstart', dragstart)
+    card.addEventListener('dragend', dragend)
+    card.addEventListener('drag', drag)
+});
+
+function dragstart(){
+    log("Drag start")
+    dropzones.forEach((dropzone) => {dropzone.classList.add("highlight")})
+    this.classList.add('is-dragging')
+}
+function dragend(){
+    log("Drag end")
+    dropzones.forEach((dropzone) => {dropzone.classList.remove("highlight")})
+    this.classList.remove('is-dragging')
+}
+function drag(){
+    log("Dragging")
+}
+
+dropzones.forEach(dropzone => {
+    dropzone.addEventListener('dragenter',dragenter)
+    dropzone.addEventListener('dragleave',dragleave)
+    dropzone.addEventListener('dragover',dragover)
+    dropzone.addEventListener('drop',drop)
 })
-document.addEventListener('dragend', (e) =>{
-    e.target.classList.remove("dragging");
-})
-columns.forEach((column) =>{
-    column.addEventListener("dragover", (e) =>{
-        const dragging =  document.querySelector(".dragging");
-        const applyAfter = getNewPosition(column, e.clientY);
 
-        if(applyAfter){
-            applyAfter.insertAdjacentElement("afterend", dragging);
-        }else{
-            column.prepend(dragging)
-        }
-    })
-})
+function dragenter(){
+    log("Enter dropzone")
 
-function getNewPosition(column, posY){
-    const cards = column.querySelectorAll(".item:not(.dragging)");
-    let result;
-
-    for (let refer_card of cards) {
-        const box = refer_card.getBoundingClientRect()
-        const boxCenterY = box.y + box.height / 2;
-
-        if(posY >= boxCenterY) result  =refer_card;
-        
-    }
-
-    return result;
+}
+function dragleave(){
+    log("Leave dropzone")
+}
+function dragover(){
+    log("Over dropzone")
+}
+function drop(){
+    log("Drop dropzone")
 }

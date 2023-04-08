@@ -2,34 +2,72 @@
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Nunito", sans-serif;
   font-size: 30px;
 }
 
-.kanban {
-  display: flex;
-  justify-content: center;
-  min-height: 400px;
-  gap: 10px;
-  padding: 10px;
+html {
+  font-size: 65.75%;
 }
 
-.column {
+body {
+  background-color: #130f0d;
+  color: white;
+}
+
+.boards {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 2%;
+}
+.boards .board {
+  width: 35rem;
+  height: 40rem;
+  padding: 2rem;
+  background-color: #141316;
+  border: 1px solid rgba(253, 149, 31, 0.0666666667);
+  border-radius: 4px;
+}
+.boards .board h3 {
+  color: orangered;
+}
+.boards .board .dropzone {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 10px;
-  background-color: cadetblue;
-  min-width: 200px;
-  border-radius: 5px;
+  min-width: 282px;
+  padding: 3rem 0%;
+  height: 100%;
+  transition: 0.4s;
 }
-
-.item {
-  background-color: white;
-  padding: 10px;
-  border-radius: 5px;
+.boards .board .dropzone.highlight {
+  background-color: greenyellow;
 }
-
-.dragging {
-  opacity: 0.5;
+.boards .board .dropzone .card {
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  min-height: 10rem;
+  padding: 2rem;
+  border-bottom: 2px solid orangered;
+  background-color: #130f0d;
+}
+.boards .board .dropzone .card.is-dragging {
+  cursor: move;
+  opacity: 0.2;
+}
+.boards .board .dropzone .card .status {
+  border-radius: 20px;
+  height: 15px;
+  background-color: grey;
+  width: 45px;
+  margin-bottom: 16px;
+}
+.boards .board .dropzone .card .status.red {
+  background-color: red;
+}
+.boards .board .dropzone .card .status.blue {
+  background-color: blue;
+}
+.boards .board .dropzone .card .status.green {
+  background-color: green;
 }/*# sourceMappingURL=style.css.map */

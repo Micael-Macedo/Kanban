@@ -2,33 +2,69 @@
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Nunito', sans-serif;
     font-size: 30px;
 }
-
-.kanban {
+html{
+    font-size: 65.75%;
+}
+body{
+    background-color: #130f0d;
+    color: white;
+}
+.boards
+{
     display: flex;
-    justify-content: center;
-    min-height: 400px;
-    gap: 10px;
-    padding: 10px;
-}
-
-.column {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px;
-    background-color: cadetblue;
-    min-width: 200px;
-    border-radius: 5px;
-}
-
-.item {
-    background-color: white;
-    padding: 10px;
-    border-radius: 5px;
-}
-.dragging{
-    opacity: 0.5;
+    align-items: center;
+    gap: 3rem;
+    padding: 2%;
+    .board{
+        width: 35rem;
+        height: 40rem;
+        padding: 2rem;
+        background-color: #141316;
+        border: 1px solid #FD951F11;
+        border-radius: 4px;
+        h3{
+            color: orangered;
+        }
+        .dropzone{
+            display: flex;
+            flex-direction: column;
+            min-width: 282px;
+            padding: 3rem 0%;
+            height: 100%;
+            transition: .4s;
+            &.highlight{
+                background-color: greenyellow;
+            }
+            .card{
+                min-height: fit-content;
+                min-height: 10rem;
+                padding: 2rem;
+                border-bottom: 2px solid orangered;
+                background-color: #130f0d;
+                &.is-dragging{
+                    cursor: move;
+                    opacity: 0.2;
+                }
+                .status{
+                    border-radius: 20px;
+                    height: 15px;
+                    background-color: grey;
+                    width: 45px;
+                    margin-bottom: 16px;
+                    &.red{
+                        background-color: red;
+                    }
+                    &.blue{
+                        background-color: blue;
+                    }
+                    &.green{
+                        background-color: green;
+                    }
+                }
+            }
+        }
+    }
 }
