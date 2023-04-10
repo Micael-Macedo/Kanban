@@ -37,10 +37,16 @@ function dragenter(){
 }
 function dragleave(){
     log("Leave dropzone")
+    this.classList.remove('over')
 }
 function dragover(){
     log("Over dropzone")
+    this.classList.add('over')
+
+    const cardBeingDragged = document.querySelector(".is-dragging")
+    this.appendChild(cardBeingDragged)
 }
 function drop(){
     log("Drop dropzone")
+    this.classList.remove('over')
 }

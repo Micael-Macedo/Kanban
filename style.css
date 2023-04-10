@@ -23,7 +23,7 @@ body {
 }
 .boards .board {
   width: 35rem;
-  height: 40rem;
+  height: 45rem;
   padding: 2rem;
   background-color: #141316;
   border: 1px solid rgba(253, 149, 31, 0.0666666667);
@@ -41,7 +41,10 @@ body {
   transition: 0.4s;
 }
 .boards .board .dropzone.highlight {
-  background-color: greenyellow;
+  background-color: #130f0d;
+}
+.boards .board .dropzone.over {
+  background-color: rgba(76, 209, 55, 0.0666666667);
 }
 .boards .board .dropzone .card {
   min-height: -moz-fit-content;

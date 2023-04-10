@@ -20,7 +20,7 @@ body{
     padding: 2%;
     .board{
         width: 35rem;
-        height: 40rem;
+        height: 45rem;
         padding: 2rem;
         background-color: #141316;
         border: 1px solid #FD951F11;
@@ -36,7 +36,10 @@ body{
             height: 100%;
             transition: .4s;
             &.highlight{
-                background-color: greenyellow;
+                background-color: #130f0d;
+            }
+            &.over{
+                background-color: #4cd13711;
             }
             .card{
                 min-height: fit-content;
